@@ -7,4 +7,6 @@ AI=Ai_assistent(api_key)
 user_and_ai=Ai_assis()
 while True:
     text_output=user_and_ai.recognize_from_microphone()
-    user_and_ai.text_to_speech(AI.Assistent_listen(text_output))
+    language_detector=AI.Language_detect(text_output)
+    Ai_Listen_you=AI.Assistent_listen(text_output)
+    user_and_ai.text_to_speech(Ai_Listen_you,language_detector)

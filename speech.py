@@ -1,15 +1,15 @@
 import azure.cognitiveservices.speech as speechsdk
-
 class Ai_assis():
     def __init__(self):
         pass
     def recognize_from_microphone(self):
         # This example requires environment variables named "SPEECH_KEY" and "SPEECH_REGION"
         speech_translation_config = speechsdk.translation.SpeechTranslationConfig(subscription='fee2c30135b64dc2bf7df3f0f805abad', region='centralindia')
-        speech_translation_config.speech_recognition_language="en-IN"
-        speech_translation_config.add_target_language("hi-IN")  # English
 
-        target_language="en"
+        speech_translation_config.speech_recognition_language="hi-IN"
+        speech_translation_config.speech_recognition_language="en-IN"
+
+        target_language="hi"
         speech_translation_config.add_target_language(target_language)
 
         audio_config = speechsdk.audio.AudioConfig(use_default_microphone=True)

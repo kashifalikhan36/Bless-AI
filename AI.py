@@ -18,7 +18,7 @@ class Ai_assistent:
         )
 
         prompt = chat.choices[0].message.content
-        print("Ai Says")
+
         self.messages.append({"role": "assistant", "content": prompt})
         with open('data/ai_train.json',"w") as file:
             json.dump(self.messages, file)

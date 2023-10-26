@@ -9,7 +9,7 @@ class Ai_assis():
         speech_translation_config.speech_recognition_language="hi-IN"
         speech_translation_config.speech_recognition_language="en-IN"
 
-        target_language="hi"
+        target_language="en"
         speech_translation_config.add_target_language(target_language)
 
         audio_config = speechsdk.audio.AudioConfig(use_default_microphone=True)

@@ -54,7 +54,7 @@ class Ai_assis():
 
         if speech_synthesis_result.reason == speechsdk.ResultReason.SynthesizingAudioCompleted:
             print("\n{}".format(text))
-            with open("./audios/output_audio.wav", "wb") as audio_file:
+            with open("audios/output_audio.wav", "wb") as audio_file:
                 audio_file.write(speech_synthesis_result.audio_data)
             print("\n\n Cool down Bless...........\n")
         elif speech_synthesis_result.reason == speechsdk.ResultReason.Canceled:

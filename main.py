@@ -1,12 +1,10 @@
-from AI import Ai_assistent
-from speech import Ai_assis
+from fastapi import FastAPI
+from router import speech_api
 
-api_key="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"
+app= FastAPI
 
-AI=Ai_assistent(api_key)
-user_and_ai=Ai_assis()
-while True:
-    text_output=user_and_ai.recognize_from_microphone()
-    language_detector=AI.Language_detect(text_output)
-    Ai_Listen_you=AI.Assistent_listen(text_output)
-    user_and_ai.text_to_speech(Ai_Listen_you,language_detector)
+# app.include_router(speech_api.router)
+
+@app.get("/")
+async def get():
+    return "HI I am Bless"

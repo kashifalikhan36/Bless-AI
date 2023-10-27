@@ -23,7 +23,7 @@ image_analyzer = sdk.ImageAnalyzer(service_options, vision_source, analysis_opti
 
 result = image_analyzer.analyze()
 print(result.text,"\n\n\n\n\n")
-with open("./data/image_json.json",'w') as file:
+with open("data/image_json.json",'w') as file:
     json.dump(result.text, file)
 if result.reason == sdk.ImageAnalysisResultReason.ANALYZED:
 

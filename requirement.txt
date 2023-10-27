@@ -1,0 +1,7 @@
+azure-cognitiveservices-vision-computervision
+azure-cognitiveservices-vision-face
+azure-ai-vision
+azure-cognitiveservices-speech
+openai
+fastapi
+uvicorn

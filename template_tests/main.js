@@ -47,7 +47,7 @@ function stopRecording() {
 function sendAudioToServer(blob) {
     const formData = new FormData();
     formData.append('audio', blob, 'recording.wav');
-    fetch('http://127.0.0.1:8000/upload', {
+    fetch('https://bless-server-api.azurewebsites.net/upload', {
         method: 'POST',
         body: formData
     })

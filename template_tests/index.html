@@ -1,22 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Just try to make javascript scripts</title>
-
+  <title>Audio Recorder</title>
 </head>
+<body>
+  <button id="startRecord">Start Recording</button>
+  <button id="stopRecord" disabled>Stop Recording</button>
+  <button id="downloadButton" style="display: none">Download MP3</button>
+  <audio id="audioPlayer" controls></audio>
 
-<body onload="document.querySelector('h1').innerHTML ='Great Work'">
-    <h1>Hello</h1>
-    <div>
-        <button>CLick me Bro</button>
-        <button id="startRecord">Start Recording</button>
-        <button id="stopRecord">Stop Recording</button>
-    </div>
+  <script>
+    const startRecordButton = document.getElementById('startRecord');
+    const stopRecordButton = document.getElementById('stopRecord');
+    const audioPlayer = document.getElementById('audioPlayer');
+    const downloadButton = document.getElementById('downloadButton');
+    let mediaRecorder;
+    let audioChunks = [];
 
+    startRecordButton.addEventListener('click', startRecording);
+    stopRecordButton.addEventListener('click', stopRecording);
+    downloadButton.addEventListener('click', downloadMP3);
+
+    async function startRecording() {
+        startRecordButton.disabled = true;
+        stopRecordButton.disabled = false;
+        audioChunks = [];
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            mediaRecorder = new MediaRecorder(stream);
+            mediaRecorder.ondataavailable = (event) => {
+                audioChunks.push(event.data);
+            };
+            mediaRecorder.onstop = () => {
+                const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+                convertAndSendMP3(audioBlob);
+            };
+            mediaRecorder.start();
+        } catch (error) {
+            console.error('Error accessing microphone:', error);
+        }
+    }
+
+    function stopRecording() {
+        startRecordButton.disabled = false;
+        stopRecordButton.disabled = true;
+        mediaRecorder.stop();
+    }
+
+    async function convertAndSendMP3(blob) {
+        const audioContext = new AudioContext();
+        const audioData = await fetch(URL.createObjectURL(blob));
+        const arrayBuffer = await audioData.arrayBuffer();
+        const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
+        const mp3Data = encodeToMP3(audioBuffer);
+
+        // Create a new Blob with MP3 data
+        const mp3Blob = new Blob([mp3Data], { type: 'audio/mpeg' });
+
+        // Send the MP3 data to the server using a POST request
+        const formData = new FormData();
+        formData.append('audio', mp3Blob, 'recording.mp3');
+        fetch('http://98.70.51.201:8000/audio/upload', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Server response:', data);
+            downloadButton.style.display = 'block'; // Show the download button
+        })
+        .catch(error => {
+            console.error('Error sending audio to server:', error);
+        });
+    }
+
+    function encodeToMP3(audioBuffer) {
+        const mp3Encoder = new lamejs.Mp3Encoder(1, audioBuffer.sampleRate, 128);
+        const channelData = audioBuffer.getChannelData(0); // Get mono audio data
+        return mp3Encoder.encodeBuffer(new Int16Array(channelData));
+    }
+
+    function downloadMP3() {
+        // Redirect to the MP3 file download link
+        window.location.href = 'http://98.70.51.201:8000/audio/get';
+    }
+  </script>
+  <script src="lame.all.js"></script>
 </body>
-<script src="main.js"></script>
-
 </html>

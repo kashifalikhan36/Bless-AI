@@ -48,8 +48,23 @@ document.addEventListener("DOMContentLoaded", function () {
         // Send the MP3 data to the server using a FormData object
         const formData = new FormData();
         formData.append('audio', mp3Blob, 'recording.mp3');
-        fetch('http://127.0.0.1:8000/upload', {
+        fetch('http://98.70.51.201:8000/audio/upload', {
             method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Server response:', data);
+        })
+        .catch(error => {
+            console.error('Error sending audio to server:', error);
+        });
+    }
+
+    function getmp3data(){
+        formData.append('audio', mp3Blob, 'recording.mp3');
+        fetch('http://98.70.51.201:8000/audio/get', {
+            method: 'GET',
             body: formData
         })
         .then(response => response.json())

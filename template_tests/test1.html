@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto-Upload Audio Recorder</title>
+</head>
+
+<body>
+    <h1>Auto-Upload Audio Recorder</h1>
+    <button id="startRecording">Start Recording</button>
+    <button id="stopRecording" style="display: none;">Stop Recording</button>
+
+    <script>
+        let mediaRecorder;
+        let audioChunks = [];
+        let recordingTimer;
+
+        const startRecordingButton = document.getElementById("startRecording");
+        const stopRecordingButton = document.getElementById("stopRecording");
+
+        startRecordingButton.addEventListener("click", startRecording);
+        stopRecordingButton.addEventListener("click", stopRecording);
+
+        function startRecording() {
+            navigator.mediaDevices.getUserMedia({ audio: true })
+                .then(function (stream) {
+                    mediaRecorder = new MediaRecorder(stream);
+
+                    mediaRecorder.ondataavailable = function (event) {
+                        if (event.data.size > 0) {
+                            audioChunks.push(event.data);
+                        }
+                    };
+
+                    mediaRecorder.onstop = function () {
+                        // Generate a download URL for the audio
+                        const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+                        function saveAudioToFile(blob) {
+                            const url = URL.createObjectURL(blob);
+                            const a = document.createElement('a');
+                            a.href = url;
+                            a.download = 'input.wav';
+                            a.style.display = 'none';
+                            document.body.appendChild(a);
+                            a.click();
+                        }
+
+                        // Send the audio URL to the POST method as a parameter
+                        uploadAudio(audioBlob);
+                        audioChunks = [];
+                        startRecordingButton.style.display = "block";
+                        stopRecordingButton.style.display = "none";
+                    };
+
+                    // Record for 40 seconds and then stop
+                    recordingTimer = setTimeout(function () {
+                        mediaRecorder.stop();
+                    }, 40000);
+
+                    mediaRecorder.start();
+                    startRecordingButton.style.display = "none";
+                    stopRecordingButton.style.display = "block";
+                })
+                .catch(function (error) {
+                    console.error("Error accessing microphone:", error);
+                });
+        }
+
+        function stopRecording() {
+            mediaRecorder.stop();
+        }
+
+        function uploadAudio(audioblob) {
+            const url = URL.createObjectURL(audioblob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'input.wav';
+            a.style.display = 'none';
+            document.body.appendChild(a);
+            console.log(a)
+
+            // Send the audio URL as a parameter to the POST method
+            fetch(`http://98.70.51.201:8000/audio/uploadtest?audio=${a}`, {
+                method: 'POST'
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Upload success:', data);
+                })
+                .catch(error => {
+                    console.error('Upload error:', error);
+                });
+        }
+    </script>
+    <script src="lame.all.js"></script>
+</body>
+
+</html>

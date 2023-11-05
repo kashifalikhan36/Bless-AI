@@ -2,14 +2,14 @@
 <html>
 
 <head>
-    <title>Audio Recorder</title>
+    <title>Blessi</title>
 </head>
 
 <body>
-    <h1>Audio Recorder</h1>
-    <button id="startRecording">Start Recording</button>
-    <button id="stopRecording" style="display: none;">Stop Recording</button>
-    <button id="uploadAudio" style="display: none;">Upload Audio</button>
+    <h1>Blessi is here</h1>
+    <button id="startRecording">Talk to her</button>
+    <button id="stopRecording" style="display: none;">Okay stop naaa...</button>
+    <button id="uploadAudio" style="display: none;">Give her some time to think about it ....</button>
 
     <audio id="audioPlayer" controls style="display: none;"></audio>
 
@@ -69,17 +69,25 @@
 
             const response = await fetch(`http://98.70.57.36:443/audio/Bless_audio_input`, {
                 method: 'POST',
+
+                mode: 'no-cors',
                 body: formData,
             });
 
             const responses = await fetch(`http://98.70.57.36:443/audio/Bless_audio_output`, {
-                method: 'GET'
+                method: 'GET',
+                mode: 'no-cors',
             });
 
             const blob = await responses.blob();
             const url = URL.createObjectURL(blob);
             audioPlayer.src = url; // Change 'audioElement' to 'audioPlayer'
             audioPlayer.play();
+
+            // Add an event listener to refresh the page when the audio has ended
+            audioPlayer.onended = function () {
+                location.reload();
+            };
 
         }
     </script>

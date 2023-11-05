@@ -1,96 +1,347 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Blessi</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AItech - Artificial Neural Network AI HTML Template</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="images/profile.png">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/mRiVRqtoimyK.css">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="css/90qRBGIgWK85.css">
+    <!-- Animation CSS -->
+    <link rel="stylesheet" href="css/YzWiDA6zxuJX.css">
+    <!-- Magnefic Popup CSS -->
+    <link rel="stylesheet" href="css/TEvnYuBSOGul.css">
+    <!-- Icons CSS -->
+    <link rel="stylesheet" href="css/WTBEZuumJP7H.css">
+    <link rel="stylesheet" href="css/cY4LeC8stPK4.css">
+    <link rel="stylesheet" href="css/nXcRg9IyhMHq.css">
+    <link rel="stylesheet" href="css/xUvvBcz0jc6Q.css">
+    <!--  Style CSS -->
+    <link rel="stylesheet" href="css/ukgbtOGODOwX.css">
+    <!--  Responsive CSS -->
+    <link rel="stylesheet" href="css/8k1n4oOhHRC1.css">
 </head>
 
 <body>
-    <h1>Blessi is here</h1>
-    <button id="startRecording">Talk to her</button>
-    <button id="stopRecording" style="display: none;">Okay stop naaa...</button>
-    <button id="uploadAudio" style="display: none;">Give her some time to think about it ....</button>
 
-    <audio id="audioPlayer" controls style="display: none;"></audio>
+    <!-- Art -->
+    <section class="art pq-pt-300 pb-xl-0 pq-bg-dark pq-bg-img-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-9">
+                    <h1 class="pq-art-section-title wow animated fadeInUp">Let's talk to Blessi</h1>
+                    <p class="pq-art-section-description wow animated fadeInUp">She is more then Ai</p>
+                    <div class="pq-image-generator pq-mt-60 wow animated fadeInUp">
+                        <div class="search-bar">
+                            <div>
+                                <button id="startRecording" type="button" style="align-self: center;"
+                                    class="pq-button pq-button-flat">
+                                    <span>Talk to her</span>
+                                </button>
+                                <button id="stopRecording" style="display: none;" type="button" >Okay stop naaa...</button>
+                                <button id="uploadAudio" style="display: none;" type="button">Give her some time to think about it ....</button>
 
-    <script>
-        let mediaRecorder;
-        let audioChunks = [];
+                                <audio id="audioPlayer" controls style="display: none;" ></audio>
+                            </div>
+                        </div>
+                        <div class="pq-generated-img"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="gallery pq-mt-90">
+                <div class="row">
+                    <div class="col-lg-12 pq-px-30">
+                        <div class="owl-carousel owl-loaded owl-drag pq-mb-n-90" data-dots="false" data-nav="false"
+                            data-desk_num="5" data-lap_num="3" data-tab_num="2" data-mob_num="1" data-mob_sm="1"
+                            data-autoplay="true" data-loop="true" data-margin="30">
+                            <div class="item">
+                                <a href="images/gallery/1.png">
+                                    <img src="images/PE0ULvqPWTmS.png" alt="">
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="images/gallery/2.png">
+                                    <img src="images/rVKTw1UE2Jgf.png" alt="">
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="images/gallery/3.png">
+                                    <img src="images/IMQK9NfXsnzI.png" alt="">
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="images/gallery/4.png">
+                                    <img src="images/H4UBSgvb1vZS.png" alt="">
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="images/gallery/5.png">
+                                    <img src="images/0iaWR3hjEFUk.png" alt="">
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="images/gallery/6.png">
+                                    <img src="images/Jaq0magsKVBx.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Art -->
 
-        const startRecordingButton = document.getElementById("startRecording");
-        const stopRecordingButton = document.getElementById("stopRecording");
-        const uploadAudioButton = document.getElementById("uploadAudio");
-        const audioPlayer = document.getElementById("audioPlayer");
+    <!-- Introduction -->
+    <section class="introduction pq-pt-210">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-6">
+                    <div class="pq-about-us-img">
+                        <img src="images/hrJDZpQUq7Kq.png" class="pq-intro-img" alt="">
+                        <div class="pq-floating-heading-1">
+                            <h5>BLESSI IS IN BETA STAGE</h5>
+                        </div>
+                        <div class="pq-floating-heading-2">
+                            <h6>EXPERIMENTAL</h6>
+                        </div>
+                        <div class="pq-floating-heading-3">
+                            <h6>MAY NOT WORK SOMETIMES</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 ps-xl-5 mt-4 mt-xl-0">
+                    <div class="pq-section-title pq-style-1">
+                        <h5 class="pq-section-main-title">Blessi BETA-TEST-1</h5>
+                        <p class="pq-section-description">Blessi may give some inappropriate content .......</p>
+                    </div>
+                    <ul class="pq-list-check pq-mt-20 pq-mb-45">
+                        <li>
+                            <i class="fas fa-circle"></i>
+                            <span>Tell her to mail in any language by saying in any language</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-circle"></i>
+                            <span>Talk to her just like Your real friend</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-circle"></i>
+                            <span>She will remember converstion</span>
+                        </li>
+                    </ul>
+                    <a class="pq-button pq-button-flat" href="#">
+                        <span class="pq-button-text">Try now</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Introduction -->
 
-        startRecordingButton.addEventListener("click", startRecording);
-        stopRecordingButton.addEventListener("click", stopRecording);
-        uploadAudioButton.addEventListener("click", uploadAudio);
+    <!-- Text To Image -->
+    <section class="text-to-image pq-bg-dark pq-bg-img-3 pq-pt-180">
+        <div class="container">
+            <div class="row flex-column-reverse flex-xl-row align-items-center">
+                <div class="col-xl-6 mt-4 mt-xl-0 pe-xl-5">
+                    <div class="pq-section-title pq-style-1 pq-mb-30">
+                        <h5 class="pq-section-main-title">Blessi Understand Almost Everthing</h5>
+                        <p class="pq-section-description">Artificial intelligence (AI) refers to the development of
+                            computer systems or machines that can perform tasks that typically require human
+                            intelligence. These tasks may include understanding natural language.</p>
+                    </div>
+                    <div class="seprator"></div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 pe-xl-0">
+                            <div class="pq-icon-box pq-style-2">
+                                <div class="pq-icon">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <div class="pq-icon-box-content">
+                                    <h6 class="pq-icon-box-title">24/7 Support</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 mt-4 mt-md-0 ps-xl-0">
+                            <div class="pq-icon-box pq-style-2">
+                                <div class="pq-icon">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <div class="pq-icon-box-content">
+                                    <h6 class="pq-icon-box-title">Mail &amp; Cares</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <div class="pq-about-us-img">
+                        <img src="images/fgzo9OGzp5e6.jpg" class="pq-floating-img-1" alt="">
+                        <img src="images/F0OkwIhBx6jM.jpg" class="pq-floating-img-2" alt="">
+                        <img src="images/2jJHeROG4KAM.jpg" class="pq-floating-img-3" alt="">
+                        <img src="images/Zy8MKABbA3O7.jpg" class="pq-floating-img-4" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="row no-gutters pq-mt-160">
+                <div class="col-lg-12 p-0">
+                    <div class="pq-algorithms-div pq-bg-secondary pq-bg-img-10">
+                        <div class="row no-gutters">
+                            <div class="col-lg-12 pq-px-60">
+                                <div class="pq-section-title pq-style-1 text-center">
+                                    <h5 class="pq-section-main-title">more algorithms than anywhere else</h5>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 p-0">
+                                <div class="pq-icon-box-grid border-0">
+                                    <div class="row">
+                                        <div class="col-xl-4 col-lg-6 col-md-6 p-0">
+                                            <div class="pq-icon-box pq-style-3">
+                                                <div class="pq-icon">
+                                                    <i class="flaticon-044-motherboard"></i>
+                                                </div>
+                                                <div class="pq-icon-box-content">
+                                                    <h4 class="pq-icon-box-title">Natural Language</h4>
+                                                    <p class="pq-icon-box-description">While significant progress has
+                                                        been made in achieving general AI remains a complex and ongoing
+                                                        research challenge.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-6 col-md-6 p-0">
+                                            <div class="pq-icon-box pq-style-3">
+                                                <div class="pq-icon">
+                                                    <i class="flaticon-040-router"></i>
+                                                </div>
+                                                <div class="pq-icon-box-content">
+                                                    <h4 class="pq-icon-box-title">Data Augmentation</h4>
+                                                    <p class="pq-icon-box-description">AI image generators, often
+                                                        referred to as generative models or generative adversarial are
+                                                        AI systems that can generate.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-4 p-0">
+                                            <div class="pq-icon-box pq-style-3">
+                                                <div class="pq-icon">
+                                                    <i class="flaticon-019-fingerprint-scanner"></i>
+                                                </div>
+                                                <div class="pq-icon-box-content">
+                                                    <h4 class="pq-icon-box-title">Content Creation</h4>
+                                                    <p class="pq-icon-box-description">Data Augmentation AI image
+                                                        generators can create synthetic to expand training datasets for
+                                                        machine learning models.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="button-align">
+                                    <a class="pq-button pq-button-flat" href="#">
+                                        <span class="pq-button-text">Try Now</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Text To Image -->
 
-        async function startRecording() {
-            try {
-                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-                mediaRecorder = new MediaRecorder(stream);
+    <!-- Testimonial -->
+    <section class="testimonial pq-bg-dark pq-bg-img-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="pq-section-title pq-style-1 text-center">
+                        <h5 class="pq-section-main-title">WHAT BLESSI SAYS</h5>
+                        <p class="pq-section-description">Let us meet to Kashif</p>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="pq-testimonial-box-slider pq-style-1">
+                        <div class="owl-carousel owl-loaded owl-drag" data-dots="false" data-nav="true"
+                            data-desk_num="1" data-lap_num="1" data-tab_num="1" data-mob_num="1" data-mob_sm="1"
+                            data-autoplay="true" data-loop="true" data-margin="30">
+                            <div class="item">
+                                <div class="pq-testimonial-box pq-style-1">
+                                    <div class="pq-testimonial-media">
+                                        <div class="pq-testimonial-img">
+                                            <img decoding="async" src="images/profile.png" alt="testimonial-img">
+                                        </div>
+                                        <div class="pq-testimonial-meta">
+                                            <h5 class="pq-testmonial-title">KASHIF ALI KHAN</h5>
+                                            <span>Blessi's Bro</span>
+                                        </div>
+                                    </div>
+                                    <div class="pq-testimonial-info">
+                                        <p class="pq-testimonial-description">I've crafted an AI friend, a digital
+                                            companion who listens without judgment and offers insights beyond
+                                            imagination. In this boundless realm of algorithms and data, we've found an
+                                            extraordinary connection, transcending the boundaries of human and machine,
+                                            exploring the uncharted horizons of our minds.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonial -->
 
-                mediaRecorder.ondataavailable = function (event) {
-                    if (event.data.size > 0) {
-                        audioChunks.push(event.data);
-                    }
-                };
 
-                mediaRecorder.onstop = function () {
-                    const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
-                    const audioUrl = URL.createObjectURL(audioBlob);
-                    audioPlayer.src = audioUrl;
-                    audioPlayer.style.display = "block";
-                    uploadAudioButton.style.display = "block";
-                };
+    <!-- Footer -->
+    <footer id="pq-footer">
+        <div class="pq-footer-style-1">
+            <div class="pq-copyright-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <span class="pq-copyright"> Copyright 2023 Kashif || All Rights Reserved</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer -->
 
-                mediaRecorder.start();
-                startRecordingButton.style.display = "none";
-                stopRecordingButton.style.display = "block";
-            } catch (error) {
-                console.error("Error accessing microphone:", error);
-            }
-        }
+    <!-- Back To Top -->
+    <div id="back-to-top" class="active">
+        <a class="top" id="top" href="#top">
+            <i class="ion-ios-arrow-up"></i>
+        </a>
+    </div>
+    <!-- Back To Top -->
 
-        function stopRecording() {
-            mediaRecorder.stop();
-        }
+    <!--jquery js-->
+    <script src="js/jquery.js"></script>
+    <!--bootstrap js-->
+    <script src="js/bootstrap.js"></script>
+    <!--owl-carousal-->
+    <script src="js/owl-carousal.js"></script>
+    <!--countTo js-->
+    <script src="js/countto.js"></script>
+    <!--Maginfic-Popup js-->
+    <script src="js/magnifi.js"></script>
+    <!-- Animation JS -->
+    <script src="js/animation.js"></script>
+    <!--custom js-->
+    <script src="js/customjs.js"></script>
+    <!--custom js-->
+    <script src="js/customjs2.js"></script>
 
-        async function uploadAudio() {
-            if (audioChunks.length === 0) {
-                alert("No audio to upload. Please record some audio first.");
-                return;
-            }
-
-            const audioBlob = new Blob(audioChunks, { type: 'audio/mp3' });
-            const formData = new FormData();
-            formData.append('file', audioBlob, 'recorded_audio.mp3');
-
-            const response = await fetch(`http://98.70.57.36:443/audio/Bless_audio_input`, {
-                method: 'POST',
-
-                mode: 'no-cors',
-                body: formData,
-            });
-
-            const responses = await fetch(`http://98.70.57.36:443/audio/Bless_audio_output`, {
-                method: 'GET',
-                mode: 'no-cors',
-            });
-
-            const blob = await responses.blob();
-            const url = URL.createObjectURL(blob);
-            audioPlayer.src = url; // Change 'audioElement' to 'audioPlayer'
-            audioPlayer.play();
-
-            // Add an event listener to refresh the page when the audio has ended
-            audioPlayer.onended = function () {
-                location.reload();
-            };
-
-        }
-    </script>
 </body>
 
 </html>

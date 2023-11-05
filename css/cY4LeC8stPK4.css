@@ -1,0 +1,96 @@
+@font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/37i9zWOrsfDs.woff2") format("woff2"),
+       url("../fonts/EqgFlVPxz1am.woff") format("woff"),
+       url("../fonts/sm5fNNq58nTJ.ttf") format("truetype"),
+       url("../images/9wcKWCm5hX0A.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("../images/9wcKWCm5hX0A.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"], [class*=" flaticon-"] {
+ font-family: "Flaticon";
+    src: url("../images/9wcKWCm5hX0A.svg#Flaticon") format("svg");
+    font-style: normal;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.fimanager:before {
+      display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    display: block;
+}
+
+.flaticon-001-gps:before { content: "\f100"; }
+.flaticon-002-computer-tower:before { content: "\f101"; }
+.flaticon-003-game-console:before { content: "\f102"; }
+.flaticon-004-wired-gloves:before { content: "\f103"; }
+.flaticon-005-laptop:before { content: "\f104"; }
+.flaticon-006-smart-energy:before { content: "\f105"; }
+.flaticon-007-face-scanner:before { content: "\f106"; }
+.flaticon-008-smart-lock:before { content: "\f107"; }
+.flaticon-009-smart-speaker:before { content: "\f108"; }
+.flaticon-010-windmill:before { content: "\f109"; }
+.flaticon-011-rover:before { content: "\f10a"; }
+.flaticon-012-digital-wallet:before { content: "\f10b"; }
+.flaticon-013-ssd-card:before { content: "\f10c"; }
+.flaticon-014-virtual-reality:before { content: "\f10d"; }
+.flaticon-015-jetpack:before { content: "\f10e"; }
+.flaticon-016-wireless-charger:before { content: "\f10f"; }
+.flaticon-017-brain:before { content: "\f110"; }
+.flaticon-018-pen-tablet:before { content: "\f111"; }
+.flaticon-019-fingerprint-scanner:before { content: "\f112"; }
+.flaticon-020-wireless-mouse:before { content: "\f113"; }
+.flaticon-021-vga-card:before { content: "\f114"; }
+.flaticon-022-sim-card:before { content: "\f115"; }
+.flaticon-023-smart-glasses:before { content: "\f116"; }
+.flaticon-024-game-console:before { content: "\f117"; }
+.flaticon-025-smartwatch:before { content: "\f118"; }
+.flaticon-026-blockchain:before { content: "\f119"; }
+.flaticon-027-cloud-storage:before { content: "\f11a"; }
+.flaticon-028-drone:before { content: "\f11b"; }
+.flaticon-029-cam:before { content: "\f11c"; }
+.flaticon-030-satellite:before { content: "\f11d"; }
+.flaticon-031-eye-scanner:before { content: "\f11e"; }
+.flaticon-032-security-camera:before { content: "\f11f"; }
+.flaticon-033-brain:before { content: "\f120"; }
+.flaticon-034-augmented-reality:before { content: "\f121"; }
+.flaticon-035-3d-printer:before { content: "\f122"; }
+.flaticon-036-robot-vacuum:before { content: "\f123"; }
+.flaticon-037-processor:before { content: "\f124"; }
+.flaticon-038-music-player:before { content: "\f125"; }
+.flaticon-039-earphones:before { content: "\f126"; }
+.flaticon-040-router:before { content: "\f127"; }
+.flaticon-041-round-webcam:before { content: "\f128"; }
+.flaticon-042-ram:before { content: "\f129"; }
+.flaticon-043-touch:before { content: "\f12a"; }
+.flaticon-044-motherboard:before { content: "\f12b"; }
+.flaticon-045-memory-card:before { content: "\f12c"; }
+.flaticon-046-green-energy:before { content: "\f12d"; }
+.flaticon-047-battery:before { content: "\f12e"; }
+.flaticon-048-water-boiler:before { content: "\f12f"; }
+.flaticon-049-smart-band:before { content: "\f130"; }
+.flaticon-050-wifi:before { content: "\f131"; }

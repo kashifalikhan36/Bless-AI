@@ -67,12 +67,12 @@
             const formData = new FormData();
             formData.append('file', audioBlob, 'recorded_audio.mp3');
 
-            const response = await fetch(`http://10.1.0.5:8000/audio/Bless_audio_input`, {
+            const response = await fetch(`http://98.70.57.36:443/audio/Bless_audio_input`, {
                 method: 'POST',
                 body: formData,
             });
 
-            const responses = await fetch(`http://10.1.0.5:8000/audio/Bless_audio_output`, {
+            const responses = await fetch(`http://98.70.57.36:443/audio/Bless_audio_output`, {
                 method: 'GET'
             });
 

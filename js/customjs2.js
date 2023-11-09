@@ -29,6 +29,7 @@ async function startRecording() {
             stopRecordingButton.style.display = "none";
             audioPlayer.style.display = "block";
             uploadAudioButton.style.display = "block";
+            uploadAudioButton.click()
         };
 
         mediaRecorder.start();
@@ -71,5 +72,9 @@ async function uploadAudio() {
     audioPlayer.onended = function () {
         location.reload();
     };
+    startRecordingButton.style.display = "block";
+    stopRecordingButton.style.display = "none";
+    audioPlayer.style.display = "none";
+    uploadAudioButton.style.display = "none";
 
 }

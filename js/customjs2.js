@@ -6,6 +6,7 @@ const startRecordingButton = document.getElementById("startRecording");
 const stopRecordingButton = document.getElementById("stopRecording");
 const uploadAudioButton = document.getElementById("uploadAudio");
 const audioPlayer = document.getElementById("audioPlayer");
+const Blessitext = document.getElementById("Blessitext");
 
 startRecordingButton.addEventListener("click", startRecording);
 stopRecordingButton.addEventListener("click", stopRecording);
@@ -27,8 +28,6 @@ async function startRecording() {
             const audioUrl = URL.createObjectURL(audioBlob);
             audioPlayer.src = audioUrl;
             stopRecordingButton.style.display = "none";
-            audioPlayer.style.display = "block";
-            uploadAudioButton.style.display = "block";
             uploadAudioButton.click()
         };
 
@@ -65,14 +64,17 @@ async function uploadAudio() {
 
     const blob = await responses.blob();
     const url = URL.createObjectURL(blob);
-    audioPlayer.src = url; // Change 'audioElement' to 'audioPlayer'
+    audioPlayer.style.display = "block";
+    audioPlayer.src = url; 
     audioPlayer.play();
+    Blessitext.style.display = "block";
+
 
     // Add an event listener to refresh the page when the audio has ended
     audioPlayer.onended = function () {
         location.reload();
     };
-    startRecordingButton.style.display = "block";
+    startRecordingButton.style.display = "none";
     stopRecordingButton.style.display = "none";
     audioPlayer.style.display = "none";
     uploadAudioButton.style.display = "none";

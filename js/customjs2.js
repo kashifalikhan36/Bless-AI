@@ -14,7 +14,7 @@ uploadAudioButton.addEventListener("click", uploadAudio);
 
 async function startRecording() {
     try {
-        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: { sampleRate: 16000 } });
         mediaRecorder = new MediaRecorder(stream);
 
         mediaRecorder.ondataavailable = function (event) {

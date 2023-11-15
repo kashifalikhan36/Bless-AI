@@ -53,12 +53,12 @@ async function uploadAudio() {
     const formData = new FormData();
     formData.append('file', audioBlob, 'recorded_audio.mp3');
 
-    const response = await fetch(`http://98.70.57.36:443/audio/Bless_audio_input`, {
+    const response = await fetch(`https://blessi-api.allserieshub.fun/audio/Bless_audio_input`, {
         method: 'POST',
         body: formData,
     });
 
-    const responses = await fetch(`http://98.70.57.36:443/audio/Bless_audio_output`, {
+    const responses = await fetch(`https://blessi-api.allserieshub.fun/audio/Bless_audio_output`, {
         method: 'GET'
     });
 

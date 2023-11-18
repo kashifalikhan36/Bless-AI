@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-signin-client_id" content="1062963136060-b0i3fi0oij6ub5rncvkpp5cph3r8o2or.apps.googleusercontent.com">
+  <title>Google Sign-In Example</title>
+  <!-- Include the Google Sign-In library -->
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+</head>
+<body>
+  <!-- Google Sign-In button -->
+  <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+  <!-- Display user information -->
+  <h2>User Information:</h2>
+  <p>ID: <span id="userId"></span></p>
+  <p>Name: <span id="userName"></span></p>
+  <p>Email: <span id="userEmail"></span></p>
+
+  <!-- Sign out button -->
+  <button onclick="signOut()">Sign out</button>
+
+  <script>
+    // Callback function triggered after successful sign-in
+    function onSignIn(googleUser) {
+      var profile = googleUser.getBasicProfile();
+      document.getElementById('userId').innerText = profile.getId();
+      document.getElementById('userName').innerText = profile.getName();
+      document.getElementById('userEmail').innerText = profile.getEmail();
+      // You can send the user's information to your server for further processing
+    }
+
+    // Function to sign out the user
+    function signOut() {
+      var auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function () {
+        // Clear displayed user information
+        document.getElementById('userId').innerText = '';
+        document.getElementById('userName').innerText = '';
+        document.getElementById('userEmail').innerText = '';
+        console.log('User signed out.');
+      });
+    }
+  </script>
+</body>
+</html>
+

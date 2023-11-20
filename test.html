@@ -25,6 +25,7 @@
     // Callback function triggered after successful sign-in
     function onSignIn(googleUser) {
       var profile = googleUser.getBasicProfile();
+      console.log(profile)
       document.getElementById('userId').innerText = profile.getId();
       document.getElementById('userName').innerText = profile.getName();
       document.getElementById('userEmail').innerText = profile.getEmail();

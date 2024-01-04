@@ -30,10 +30,10 @@
       // Get the authentication token
       var idToken = googleUser.getAuthResponse().id_token;
 
-      // Display user information
-      document.getElementById('userId').innerText = profile.getId();
-      document.getElementById('userName').innerText = profile.getName();
-      document.getElementById('userEmail').innerText = profile.getEmail();
+    //   // Display user information
+    //   document.getElementById('userId').innerText = profile.getId();
+    //   document.getElementById('userName').innerText = profile.getName();
+    //   document.getElementById('userEmail').innerText = profile.getEmail();
 
       // Send the authentication token to your server
       sendTokenToServer(idToken);
